@@ -1,0 +1,64 @@
+Delivered-To: destino_email@gmail.com
+Received: by 2002:a05:6850:b304:b0:37b:797:122d with SMTP id fg4csp5676222nnb;
+        Sat, 26 Nov 2022 09:49:45 -0800 (PST)
+X-Google-Smtp-Source: AA0mqf7FnzsY13+u1rUGKJ8YQouBY9mQrzH+dMiNVI+PO6sFHPX82+Qh82t+iZ8rcD1zcylXBtF1
+X-Received: by 2002:a05:600c:348d:b0:3cf:88e7:f808 with SMTP id a13-20020a05600c348d00b003cf88e7f808mr18670422wmq.200.1669484984842;
+        Sat, 26 Nov 2022 09:49:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1669484984; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nQVpeYN/fGw2ZKIf8vgJ4V37ltZnM2TnXH2cbQLB8FiGRlqxLNGq7bt0tt/nY1Ta47
+         tuGHaRWSyQKELO3Mq5rgcCEED6oXn+PSzGkjHTdJHqs1WFZcE7TfygB6n2xD+BI7AStf
+         S1D6OZjlHFjTLQ5j2Fho2bw0MlYE/O2++R7cLduHEU9njDBdkVGNWgD6y7553J7FOUw2
+         KMFESLY9pXrafQ3dJofYxsPtLKWJxFs9oPSk7BrDv5nu+h9CTciIs34+PnLJyDsJOOMA
+         +h/cWL0DJcfoGGYDnqNFFFqhdgvPOgKLNL7qtA7MxviasGI3WJWOf6Deqh5+C0mW+sIy
+         Dq4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=dkim-signature:content-transfer-encoding:subject:from:to:date
+         :message-id:mime-version;
+        bh=4cEIuBnPvZnpJ9QIUFYNo3fc0G332eFu0Xj7cZtNKJs=;
+        b=ZJVt+MnWv/tI2Yeolh0HFEZONDS1ri+WCmYYtm2p095XhKPrLPac7ltUrZRa6wdwPp
+         IvTL7GJfgqD5iILld3tAGMGSou8p+F74ZB2p5JSFUD67VZpj3bsd2XGaK9tYLlZDjCEf
+         fuxgL67+w2maqICpq6XqGeE5P/fosJg8WSeplccV46AeROH+Dtx3xl0TRDK88Wg6BZ/a
+         Mr315Na1h9o4W29eJuGzComF4ZVtknb8CAr9+BOKv9RUbLMRCGvUCzdulEgxHEM+OOTS
+         L1ch0tAb1zlniwVXHnMWYvSCeHctlCo3ZMq+dlt2QPJOr/ROcorE0wOgwLm+vg9pJvX0
+         5mLg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@guerrillamail.com header.s=highgrade header.b=G2ZmFM2p;
+       spf=pass (google.com: domain of qlrfim+5c5g5x4ev0ov8@guerrillamail.com designates 2a01:4f8:251:657::2 as permitted sender) smtp.mailfrom=qlrfim+5c5g5x4ev0ov8@guerrillamail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=guerrillamail.com
+Return-Path: <qlrfim+5c5g5x4ev0ov8@guerrillamail.com>
+Received: from mail.guerrillamail.com (mail.guerrillamail.com. [2a01:4f8:251:657::2])
+        by mx.google.com with ESMTPS id bn7-20020a056000060700b0022a47e69761si5252881wrb.569.2022.11.26.09.49.44
+        for <destino_email@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 26 Nov 2022 09:49:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of qlrfim+5c5g5x4ev0ov8@guerrillamail.com designates 2a01:4f8:251:657::2 as permitted sender) client-ip=2a01:4f8:251:657::2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@guerrillamail.com header.s=highgrade header.b=G2ZmFM2p;
+       spf=pass (google.com: domain of qlrfim+5c5g5x4ev0ov8@guerrillamail.com designates 2a01:4f8:251:657::2 as permitted sender) smtp.mailfrom=qlrfim+5c5g5x4ev0ov8@guerrillamail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=guerrillamail.com
+Received: by 168.119.142.36 with HTTP; Sat, 26 Nov 2022 17:49:43 +0000
+MIME-Version: 1.0
+Message-ID: <6b3c6f358984530281276689dfc6996ad72@guerrillamail.com>
+Date: Sat, 26 Nov 2022 17:49:43 +0000
+To: "destino_email@gmail.com" <destino_email@gmail.com>
+From: <qlrfim+5c5g5x4ev0ov8@guerrillamail.com>
+Subject: Análise de Header
+X-Originating-IP: [45.177.114.57]
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Domain-Signer: PHP mailDomainSigner 0.2-20110415 <http://code.google.com/p/php-mail-domain-signer/>
+DKIM-Signature: v=1; a=rsa-sha256; s=highgrade; d=guerrillamail.com; l=218; t=1669484984; c=relaxed/relaxed; h=to:from:subject; bh=4cEIuBnPvZnpJ9QIUFYNo3fc0G332eFu0Xj7cZtNKJs=; b=G2ZmFM2pO56allnU7aHvZwaoII56f6bPuQCRgFtdy1+hBAfotFh8mBu8Rrgigo3aYL1G7/xzNKta NsamgLL/YPITVwMcQDCQDSUHQCJ4R0AwRfAl67dcLaw1GEdxDSg2OsdxNvU+rTHj6FqE9Gq1Nawq k1OlqQMabGEK6GYQUoh6hgikDUrTOpeh5M48CMnBv97IqL/+qQr9DE5pH8/O3b29Ln+1fDcI6L9l mU2GZbRZqoGRM92itoWVVtfKAWaHa9X1VLs8ZbfA1kzX3gpQj3ypAKxub6ROasyNxPvsOBRcHGSt 5IjAoDklVXV7EViqEV05AgvdhPv5UEFNXUQf5w==
+
+aula an=C3=A1lise de cabe=C3=A7alho e-mail.
+
+att
+
+
+
+
+
+----
+Sent using Guerrillamail.com
+Block or report abuse: https://www.guerrillamail.com//abuse/?a=3DUVN1EQQDQr=
+UZnQC7414YfxXOQYST3do%3D
